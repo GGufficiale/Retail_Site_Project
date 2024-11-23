@@ -1,0 +1,20 @@
+{% extends 'retail/base.html' %}
+{% load static %}
+{% block content %}
+<div class="col-md-6 text-center container">
+    <div class="card mb-4 box-shadow text-center">
+        <div class="card-body">
+            <p class="card-text">
+                Мы в ДС (МСК):
+                Ул.Кодерская, д.200, ТЦ "Джанго"<br>
+                Мы в ДС-2 (СПб):
+                Ул.Рансерверская, д.404
+            </p>
+        </div>
+        <div class="btn-group">
+            <a class="btn btn-primary" href="{% url 'retail:index' %}"
+               role="button">Назад</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

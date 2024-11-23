@@ -1,0 +1,40 @@
+<div class="collapse text-bg-dark" id="navbarHeader">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8 col-md-7 py-4">
+                <h4>Добро пожаловать. Снова</h4>
+                <p class="text-body-secondary"> Не отпустим без заказа.</p>
+            </div>
+            <div class="col-sm-4 offset-md-1 py-4">
+                <h4>Навигация</h4>
+                <ul class="list-unstyled">
+                    <li><a href="{% url 'retail:index' %}" class="text-white">Главная</a></li>
+                    <li><a href="{% url 'retail:menu' %}" class="text-white">Меню</a></li>
+                    {% if user.is_authenticated %}
+                    <li><a href="{% url 'users:logout' %}" class="text-white">Выход</a></li>
+                    {% else %}
+                    <li><a href="{% url 'users:login' %}" class="text-white">Личный кабинет</a></li>
+                    <li><a href="{% url 'users:register' %}" class="text-white">Регистрация</a></li>
+                    {% endif %}
+                    <li><a href="{% url 'retail:contact' %}" class="text-white">Контакты</a></li>
+                    <li><a href="{% url 'retail:info' %}" class="text-white">О ресторане</a></li>
+                    <li><a href="{% url 'retail:booking_create' %}" class="text-white">Бронирование</a></li>
+                    {% if user.is_authenticated %}
+                    <li><a href="{% url 'retail:booking_list' %}" class="text-white">Список бронирований</a></li>
+                    {% endif %}
+                    <li><a href="{% url 'retail:complain' %}" class="text-white">Челобитная</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="navbar navbar-dark bg-dark shadow-sm">
+    <div class="container">
+        <a href="#" class="navbar-brand d-flex align-items-center">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader"
+                aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</div>

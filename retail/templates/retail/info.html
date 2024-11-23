@@ -1,0 +1,22 @@
+{% extends 'retail/base.html' %}
+{% load static %}
+{% block content %}
+<div class="col-md-6 text-center container">
+    <img src="{% static 'images/smokedcoder2.jpg' %}" class="d-block w-100" alt="Photo">
+    <div class="card mb-4 box-shadow">
+        <div class="card-body">
+            <p class="card-text">
+            <h2>ПЕРВЫЙ КОД-РЕСТОРАН В СПБ и МСК.</h2>
+            <h6>Наши ценности: качественный прод, хорошая прожарка.</h6>
+            <h6>Ценовая политика:
+                Студент/ джун? Пей без закуски.
+                Сеньор? Пей.</h6>
+            <h6>Команда: умеешь держать поднос и думаешь записаться на курсы в Скайпро? Ты - наш.</h6>
+        </div>
+        <div class="btn-group">
+            <a class="btn btn-primary" href="{% url 'retail:index' %}"
+               role="button">Назад</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
