@@ -38,10 +38,10 @@ class ProductDetailView(DetailView):
     model = Product
 
 
-class ProductCreateView(CreateView):
+class ProductCreateView(LoginRequiredMixin, CreateView):
     model = Product
     form_class = ProductForm
-    template_name = 'retail/product_create.html'
+    success_url = reverse_lazy('retail:product_list')
 
     def get_success_url(self):
         if self.request.user.is_authenticated:
@@ -49,15 +49,15 @@ class ProductCreateView(CreateView):
         else:
             return reverse('retail:index')
 
-    def form_valid(self, form):
-        """Метод для """
-        ...
+    # def form_valid(self, form):
+    #     """Метод для """
+    #     ...
 
 
 class ProductUpdateView(LoginRequiredMixin, UpdateView):
     model = Product
     form_class = ProductForm
-    template_name = 'retail/product_create.html'
+    # template_name = 'retail/product_create.html'
     success_url = reverse_lazy('retail:product_list')
 
     def get_success_url(self):

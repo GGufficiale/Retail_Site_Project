@@ -68,4 +68,4 @@ class ProductModeratorForm(StyleFormMixin, ModelForm):
     class Meta:
         model = Product
         # Строка для исключения поля. Если нужно вывести все - пишем "__all__"
-        fields = ("description", 'owner')
+        fields = ("description",)

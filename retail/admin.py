@@ -15,21 +15,21 @@ class ProductAdmin(admin.ModelAdmin):
 
 
 @admin.register(Factory)
-class CategoryAdmin(admin.ModelAdmin):
-    list_display = ('id', 'name', 'contact', 'debt', 'created_at', 'factory_supplier')
-    list_filter = ('contact', 'factory_supplier')
-    search_fields = ('contact', 'factory_supplier')
+class FactoryAdmin(admin.ModelAdmin):
+    list_display = ('id', 'name', 'contact', 'debt', 'created_at')
+    list_filter = ('contact',)
+    search_fields = ('contact',)
 
 
 @admin.register(RetailNetwork)
-class CategoryAdmin(admin.ModelAdmin):
+class RetailNetworkAdmin(admin.ModelAdmin):
     list_display = ('id', 'name', 'contact', 'debt', 'created_at', 'factory_supplier')
     list_filter = ('contact', 'factory_supplier')
     search_fields = ('contact', 'factory_supplier')
 
 
 @admin.register(IP)
-class CategoryAdmin(admin.ModelAdmin):
+class IPAdmin(admin.ModelAdmin):
     list_display = ('id', 'name', 'contact', 'debt', 'created_at', 'factory_supplier', 'retail_network_supplier')
     list_filter = ('contact', 'factory_supplier', 'retail_network_supplier')
     search_fields = ('contact', 'factory_supplier', 'retail_network_supplier')
